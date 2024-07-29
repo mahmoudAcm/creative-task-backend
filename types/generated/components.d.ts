@@ -5,12 +5,23 @@ export interface SeoMeta extends Schema.Component {
   info: {
     displayName: 'Meta';
     icon: 'apps';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
     description: Attribute.String;
     image: Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    slug: Attribute.String;
+  };
+}
+
+export interface BlocksSpotlight extends Schema.Component {
+  collectionName: 'components_blocks_spotlights';
+  info: {
+    displayName: 'Spotlight';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Attribute.String;
   };
 }
 
@@ -18,6 +29,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'seo.meta': SeoMeta;
+      'blocks.spotlight': BlocksSpotlight;
     }
   }
 }

@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_spotlights",
+  "info": {
+    "displayName": "Spotlight",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -22,8 +22,13 @@
     "Content": {
       "type": "dynamiczone",
       "components": [
-        "seo.meta"
+        "blocks.spotlight"
       ]
+    },
+    "meta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.meta"
     }
   }
 }

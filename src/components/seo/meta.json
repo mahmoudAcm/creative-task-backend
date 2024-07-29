@@ -2,7 +2,8 @@
   "collectionName": "components_seo_metas",
   "info": {
     "displayName": "Meta",
-    "icon": "apps"
+    "icon": "apps",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,17 +14,15 @@
       "type": "string"
     },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
-    },
-    "slug": {
-      "type": "string"
+      ]
     }
   }
 }

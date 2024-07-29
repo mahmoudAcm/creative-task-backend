@@ -4,6 +4,8 @@
  * page router
  */
 
-const { createCoreRouter } = require('@strapi/strapi').factories;
-
-module.exports = createCoreRouter('api::page.page');
+module.exports = {
+  routes: [{
+    method: 'GET', path: '/page/:slug', handler: 'page.findBySlug',
+  }]
+}

@@ -299,7 +299,8 @@ export interface ApiPagePage extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     slug: Attribute.UID<'api::page.page', 'title'>;
-    Content: Attribute.DynamicZone<['seo.meta']>;
+    Content: Attribute.DynamicZone<['blocks.spotlight']>;
+    meta: Attribute.Component<'seo.meta'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
