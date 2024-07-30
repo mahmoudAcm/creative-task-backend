@@ -12,11 +12,13 @@
   },
   "devDependencies": {},
   "dependencies": {
+    "@ckeditor/strapi-plugin-ckeditor": "^0.0.13",
     "@strapi/plugin-cloud": "4.25.5",
     "@strapi/plugin-i18n": "4.25.5",
     "@strapi/plugin-users-permissions": "4.25.5",
     "@strapi/strapi": "4.25.5",
     "better-sqlite3": "8.6.0",
+    "jwt-decode": "^4.0.0",
     "pg": "^8.12.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
