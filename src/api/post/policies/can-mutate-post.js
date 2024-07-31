@@ -4,22 +4,18 @@
  * `can-mutate-post` policy
  */
 
-const {jwtDecode} = require("jwt-decode");
 module.exports = async (policyContext, config, {strapi}) => {
   // Add your own logic here.
+
   strapi.log.info('In can-mutate-post policy.');
 
-  const {params, request: {headers}} = policyContext;
+  if (!policyContext?.state?.user) return false;
 
-  if(!headers?.authorization) return false;
+  // if we create a post, we can mutate if we authenticated
+  if (policyContext.state.route.method === 'POST') return true;
 
-  const [, token] = headers.authorization?.split("Bearer ");
-
-  if (!token) return false;
-
-  const {user} = jwtDecode(token);
-
-  const {id} = params;
+  const user = policyContext.state.user;
+  const {id} = policyContext.params;
 
   const post = await strapi.entityService.findOne("api::post.post", id, {populate: {author: true}});
 
